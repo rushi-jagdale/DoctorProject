@@ -1,0 +1,39 @@
+{% extends "base.html"%}
+{%block content%}
+
+
+<div class="d-flex justify-content-center align-items-center container">
+    <form method="POST" action="/update/{{data.id}}" class="">
+        {% csrf_token%}
+    <div class="row g-3 align-items-center mt-4">
+    <div class="form-group row">
+      <label for="inputPassword6" class="col-form-label">Doctor Name</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" name="Doctor_name" id="inputPassword6" value="{{data.Doctor_name}}" class="form-control" >
+    </div>
+</div>
+<div class="row g-3 align-items-center mt-4">
+    <div class="form-group row">
+        <label for="inputPassword6" class="col-form-label">Doctor Age  </label>
+      </div>
+      <div class="col-auto">
+        <input type="text" id="inputPassword6" name="Doctor_age" value="{{data.Doctor_age}}" class="form-control" aria-describedby="passwordHelpInline">
+      </div>
+  </div>
+  <div class="row g-3 align-items-center mt-4">
+    <div class="form-group row">
+        <label for="inputPassword6" class="col-form-label">Gender  </label>
+      </div>
+      <div class="col-auto">
+        <input type="text" id="inputPassword6" name="Gender" value="{{data.Gender}}" class="form-control" aria-describedby="passwordHelpInline">
+      </div>
+  </div>
+  <input type="text" id="inputPassword6" value="{{data.Created_at}}" class="form-control" aria-describedby="passwordHelpInline">
+  <input type="text" id="inputPassword6" value="{{data.Updated_at}}" class="form-control" aria-describedby="passwordHelpInline">
+  <div class="mt-4">
+    <input type="submit" class="btn btn-primary" value="Submit"> 
+    </div>
+  </form>
+  </div>
+{%endblock%}
